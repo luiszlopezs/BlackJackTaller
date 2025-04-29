@@ -6,8 +6,8 @@ package edu.progavud.taller2pa.control;
 
 /**
  *
- * @author hailen
+ * @author sangr
  */
-public class Vista {
+public class ControlMano {
     
 }
