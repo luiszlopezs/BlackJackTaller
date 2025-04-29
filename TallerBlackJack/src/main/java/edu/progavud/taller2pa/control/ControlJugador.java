@@ -17,6 +17,10 @@ public class ControlJugador {
         this.jugador = jugador;
     }
     
+    public void pedirCarta(){
+        
+    }
+    
     
     
 }

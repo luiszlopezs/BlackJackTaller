@@ -50,3 +50,4 @@ public class Mazo {
     public void setCartas(ArrayList<Carta> carta) {
         this.cartas = carta;
     }
+}

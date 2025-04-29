@@ -9,9 +9,11 @@ import edu.progavud.taller2pa.modelo.Mano;
  */
 public class ControlMano {
     private Mano mano;
+    private ControlCarta cCarta;
 
-    public ControlMano(Mano mano) {
+    public ControlMano(Mano mano, ControlCarta cCarta) {
         this.mano = mano;
+        this.cCarta = cCarta;
     }
     
     public void agregarCarta(Carta carta) {
@@ -27,7 +29,7 @@ public class ControlMano {
                 cantidadAses++;
                 valor += 11;
             } else {
-                valor += carta.getValor();
+                valor += cCarta.getValor();
             }
 
         }

@@ -26,6 +26,16 @@ public class ControlCarta {
             return carta.getNumero(); // 2-10 simplemente se les asigna el valor del numero que los identifica
         }
     }
+
+    public Carta getCarta() {
+        return carta;
+    }
+
+    public void setCarta(Carta carta) {
+        this.carta = carta;
+    }
+    
+    
     
     
 }
