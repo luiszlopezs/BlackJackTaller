@@ -4,10 +4,21 @@
  */
 package edu.progavud.taller2pa.control;
 
+import edu.progavud.taller2pa.modelo.Crupier;
+
 /**
  *
  * @author sangr
  */
 public class ControlCrupier {
+    private Crupier crupier;
+
+    public ControlCrupier(Crupier crupier) {
+        this.crupier = crupier;
+    }
+    
+    
+    
+    
     
 }
