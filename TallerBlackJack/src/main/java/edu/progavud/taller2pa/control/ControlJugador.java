@@ -4,10 +4,19 @@
  */
 package edu.progavud.taller2pa.control;
 
+import edu.progavud.taller2pa.modelo.Jugador;
+
 /**
  *
- * @author hailen
+ * @author sangr
  */
-public class Vista {
+public class ControlJugador {
+    private Jugador jugador;
+
+    public ControlJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+    
+    
     
 }
