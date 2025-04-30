@@ -15,9 +15,11 @@ import java.util.Collections;
 public class Mazo {
     
     private ArrayList<Carta> cartas;
+    private ControlPrincipal cPrinc;
 
-    public Mazo(ArrayList<Carta> cartas) {
+    public Mazo(ArrayList<Carta> cartas, ControlPrincipal cPrinc) {
         this.cartas = new ArrayList<>();
+        this.cPrinc = cPrinc;
         
         inicializarMazo();
         barajarMazo();
