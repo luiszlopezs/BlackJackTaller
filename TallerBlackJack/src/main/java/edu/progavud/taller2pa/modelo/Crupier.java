@@ -22,9 +22,7 @@ public class Crupier extends Persona implements Serializable {
     public Crupier() {
     }
     
-    public void barajar() { // baraja el mazo 
-        Collections.shuffle(mazo.getCartas());
-    }
+
     
     public void repartirCartas(List<Jugador> jugadores) {
         for (Jugador jugador : jugadores) {
