@@ -36,12 +36,13 @@ this.setLocationRelativeTo(null); // Para que la ventana aparezca centrada
         btnPedirCarta = new javax.swing.JButton();
         btnPlantarse = new javax.swing.JButton();
         btnDoblarApuesta = new javax.swing.JButton();
-        lblDatosJugador1 = new javax.swing.JLabel();
-        lblDatosJugador2 = new javax.swing.JLabel();
         panelCrupier = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblFichasJugador1 = new javax.swing.JLabel();
+        lblFichasJugador2 = new javax.swing.JLabel();
+        lblDineroJugador1 = new javax.swing.JLabel();
+        lblDineroJugador2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         fondoMesa = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -105,14 +106,6 @@ this.setLocationRelativeTo(null); // Para que la ventana aparezca centrada
         btnDoblarApuesta.setText("Doblar apuesta");
         getContentPane().add(btnDoblarApuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, -1, -1));
 
-        lblDatosJugador1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        lblDatosJugador1.setText("Apuesta: 0 | Dinero: 1000 ");
-        getContentPane().add(lblDatosJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
-
-        lblDatosJugador2.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        lblDatosJugador2.setText("Apuesta: 0 | Dinero: 1000 ");
-        getContentPane().add(lblDatosJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
-
         panelCrupier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         javax.swing.GroupLayout panelCrupierLayout = new javax.swing.GroupLayout(panelCrupier);
@@ -128,21 +121,33 @@ this.setLocationRelativeTo(null); // Para que la ventana aparezca centrada
 
         getContentPane().add(panelCrupier, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Carlos Rojas\\Downloads\\TallerBlackJack\\src\\main\\resources\\img\\fichaCasino.png.png")); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 50, 70));
+        lblFichasJugador1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        lblFichasJugador1.setText("Fichas: 0");
+        getContentPane().add(lblFichasJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 60, 20));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Carlos Rojas\\Downloads\\TallerBlackJack\\src\\main\\resources\\img\\fichaCasino.png.png")); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 50, 70));
+        lblFichasJugador2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        lblFichasJugador2.setText("Fichas: 0 ");
+        getContentPane().add(lblFichasJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Carlos Rojas\\Downloads\\TallerBlackJack\\src\\main\\resources\\img\\cartasCentro.png.png")); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 80, 80));
+        lblDineroJugador1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        lblDineroJugador1.setText("Dinero: 1000 ");
+        getContentPane().add(lblDineroJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
+
+        lblDineroJugador2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        lblDineroJugador2.setText("Dinero: 1000 ");
+        getContentPane().add(lblDineroJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel3.setText("Jugador 2");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel2.setText("Jugador 1");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         fondoMesa.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Carlos Rojas\\Downloads\\TallerBlackJack\\src\\main\\resources\\img\\mesaBlacjack.png.png")); // NOI18N
         fondoMesa.setText("jLabel2");
-        getContentPane().add(fondoMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 590, 470));
+        getContentPane().add(fondoMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,10 +199,11 @@ this.setLocationRelativeTo(null); // Para que la ventana aparezca centrada
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblCrupier;
-    private javax.swing.JLabel lblDatosJugador1;
-    private javax.swing.JLabel lblDatosJugador2;
+    private javax.swing.JLabel lblDineroJugador1;
+    private javax.swing.JLabel lblDineroJugador2;
+    private javax.swing.JLabel lblFichasJugador1;
+    private javax.swing.JLabel lblFichasJugador2;
     private javax.swing.JPanel panelCrupier;
     private javax.swing.JPanel panelJugador1;
     private javax.swing.JPanel panelJugador2;
