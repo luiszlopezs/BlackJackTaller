@@ -19,6 +19,14 @@ public class ControlCrupier {
         this.cPrinc = cPrinc;
     }
     
+    public boolean debePedirCarta(){
+        if(cPrinc.getcMano().calcularValorMano(crupier.getMano().get(0)) <17){ //si el valor de la mano del crupier es menor a 17, el crupier deberá pedir una carta
+            return true;
+        }else {
+            return false;
+        }
+    }
+    
     public Crupier getCrupier(){
         return crupier;
     }
