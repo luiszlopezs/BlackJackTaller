@@ -4,18 +4,19 @@
  */
 package edu.progavud.taller2pa.modelo;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author hailen
  */
-public class Persona {
+public class Persona implements Serializable{
     
     protected String nombre;
     protected String apellido;
     protected int cedula;
-    protected List<Mano> mano; // Se maneja una lista de manos, para manejar la opcion de split (dividir la mano del jugador)
+    transient protected List<Mano> mano; // Se maneja una lista de manos, para manejar la opcion de split (dividir la mano del jugador)
 
     public Persona(String nombre, String apellido, int cedula, List<Mano> mano) {
         this.nombre = nombre;

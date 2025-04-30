@@ -9,9 +9,11 @@ import edu.progavud.taller2pa.modelo.Mano;
  */
 public class ControlMano {
     private Mano mano;
+    private ControlPrincipal cPrinc;
 
-    public ControlMano(Mano mano) {
+    public ControlMano(Mano mano, ControlPrincipal cPrinc) {
         this.mano = mano;
+        this.cPrinc = cPrinc;
     }
     
     public void agregarCarta(Carta carta) {
