@@ -16,6 +16,8 @@ public class Jugador extends Persona {
     private String direccion;
     private int valorFichas;
     private int valorApuesta;
+    private boolean isAsegurado;
+    private boolean isPlantado;
 
     public Jugador(int dinero, String direccion, int valorFichas, int valorApuesta, boolean isPlantado, boolean isAsegurado, String nombre, String apellido, int cedula, List<Mano> mano) {
         super(nombre, apellido, cedula, mano);
