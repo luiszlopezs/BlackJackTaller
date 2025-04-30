@@ -12,22 +12,14 @@ import edu.progavud.taller2pa.modelo.Crupier;
  */
 public class ControlCrupier {
     private Crupier crupier;
-    private ControlMano cMano;
 
-    public ControlCrupier(Crupier crupier, ControlMano cMano) {
+    public ControlCrupier(Crupier crupier) {
         this.crupier = crupier;
-        this.cMano = cMano;
-    }
-
-    public boolean debePedir(Crupier crupier){
-        if(cMano.calcularValor(crupier.getMano().get(0)) < 16){
-            return true;
-        }else{
-            return false;
-        }      
     }
     
-    
+    public Crupier getCrupier(){
+        return crupier;
+    }
     
     
     
