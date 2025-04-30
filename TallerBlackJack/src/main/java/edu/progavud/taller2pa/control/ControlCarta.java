@@ -12,9 +12,11 @@ import edu.progavud.taller2pa.modelo.Carta;
  */
 public class ControlCarta {
     private Carta carta;
+    private ControlPrincipal cPrinc;
 
-    public ControlCarta(Carta carta) {
+    public ControlCarta(Carta carta,ControlPrincipal cPrinc) {
         this.carta = carta;
+        this.cPrinc = cPrinc;
     }
     
     public int getValor() {

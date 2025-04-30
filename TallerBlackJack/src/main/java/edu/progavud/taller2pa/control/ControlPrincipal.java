@@ -9,5 +9,11 @@ package edu.progavud.taller2pa.control;
  * @author sangr
  */
 public class ControlPrincipal {
+    private ControlCarta cCarta;
+    private ControlCrupier cCrupier;
+    private ControlJugador cJugador;
+    private ControlMano cMano;
+    private GestorSerializacion gSerializacion;
+    private Mazo mazo;
    
 }

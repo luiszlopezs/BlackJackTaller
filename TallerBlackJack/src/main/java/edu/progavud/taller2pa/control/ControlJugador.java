@@ -12,10 +12,11 @@ import edu.progavud.taller2pa.modelo.Jugador;
  */
 public class ControlJugador {
     
+    private Jugador jugador;
     private ControlPrincipal cPrinc;
-    
 
-    public ControlJugador(ControlPrincipal cPrinc) {
+    public ControlJugador(Jugador jugador, ControlPrincipal cPrinc) {
+        this.jugador = jugador;
         this.cPrinc = cPrinc;
     }
     
