@@ -19,6 +19,14 @@ public class ControlCrupier {
         this.cPrinc = cPrinc;
     }
     
+    public boolean debePedirCarta(){
+        if(cPrinc.calcularValorManoCrupier() <17){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    
     public Crupier getCrupier(){
         return crupier;
     }

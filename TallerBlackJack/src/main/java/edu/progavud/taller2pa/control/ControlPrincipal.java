@@ -15,5 +15,20 @@ public class ControlPrincipal {
     private ControlMano cMano;
     private GestorSerializacion gSerializacion;
     private Mazo mazo;
-   
+
+    public ControlPrincipal(ControlCarta cCarta, ControlCrupier cCrupier, ControlJugador cJugador, ControlMano cMano, GestorSerializacion gSerializacion, Mazo mazo) {
+        this.cCarta = cCarta;
+        this.cCrupier = cCrupier;
+        this.cJugador = cJugador;
+        this.cMano = cMano;
+        this.gSerializacion = gSerializacion;
+        this.mazo = mazo;
+    }
+    
+    public int getValorCarta(){
+        return cCarta.getValor();
+    }
+    public int calcularValorManoCrupier(){
+        return cMano.calcularValor(cCrupier.getCrupier().getMano().get(0));
+    }
 }
