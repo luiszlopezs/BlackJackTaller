@@ -57,10 +57,14 @@ public class Jugador extends Persona {
         this.valorApuesta = valorApuesta;
     }
 
-    public Jugador(int dinero) {
-        this.dinero = dinero;
+    public int getDinero() {
+        return dinero;
     }
 
+    public int getValorFichas() {
+        return valorFichas;
+    }
+    
     public void setDinero(int dinero) {
         this.dinero = dinero;
     }
@@ -68,7 +72,7 @@ public class Jugador extends Persona {
     public void setValorFichas(int valorFichas) {
         this.valorFichas = valorFichas;
     }
-
+    
     public boolean isIsPlantado() {
         return isPlantado;
     }
@@ -85,9 +89,7 @@ public class Jugador extends Persona {
         this.isAsegurado = isAsegurado;
     }
     
+    
 
-    
-    
-    
 }
 

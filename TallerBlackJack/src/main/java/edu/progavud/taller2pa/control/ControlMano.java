@@ -20,7 +20,7 @@ public class ControlMano {
         mano.agregarCarta(carta); // Añade la carta al final de la lista
     }
     //metodo para calcular el valor de la mano
-    public int calcularValor(Mano mano) {
+    public int calcularValorMano(Mano mano) {
         int valor = 0;
         int cantidadAses = 0;
 
@@ -29,7 +29,7 @@ public class ControlMano {
                 cantidadAses++;
                 valor += 11;
             } else {
-                valor += cPrinc.getValorCarta();
+                valor += cPrinc.getcCarta().getValor(); // Si no es un as, se calcula el valor de la carta a través del método delcontrolCarta
             }
 
         }
@@ -42,11 +42,11 @@ public class ControlMano {
     }
     
     public boolean esBlackjack(){
-        return mano.getCartas().size()== 2 && calcularValor(this.mano) == 21; //Si hay 2 cartas en la mano, y el valor de esta es 21, eso significa que hay blackjack
+        return mano.getCartas().size()== 2 && calcularValorMano(this.mano) == 21; //Si hay 2 cartas en la mano, y el valor de esta es 21, eso significa que hay blackjack
     }
     
     public boolean esPasado(){
-        return calcularValor(this.mano) > 21; // 
+        return calcularValorMano(this.mano) > 21; // 
     }
     
     public void limpiar(){

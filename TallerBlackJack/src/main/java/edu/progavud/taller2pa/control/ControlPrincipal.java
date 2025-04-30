@@ -25,10 +25,29 @@ public class ControlPrincipal {
         this.mazo = mazo;
     }
     
-    public int getValorCarta(){
-        return cCarta.getValor();
+    public ControlCarta getcCarta() {
+        return cCarta;
     }
-    public int calcularValorManoCrupier(){
-        return cMano.calcularValor(cCrupier.getCrupier().getMano().get(0));
+
+    public ControlCrupier getcCrupier() {
+        return cCrupier;
     }
+
+    public ControlJugador getcJugador() {
+        return cJugador;
+    }
+
+    public ControlMano getcMano() {
+        return cMano;
+    }
+
+    public GestorSerializacion getgSerializacion() {
+        return gSerializacion;
+    }
+
+    public Mazo getMazo() {
+        return mazo;
+    }
+    
+    
 }
