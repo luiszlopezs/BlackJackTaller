@@ -17,6 +17,10 @@ public class ControlCrupier {
         this.crupier = crupier;
     }
     
+    public Crupier getCrupier(){
+        return crupier;
+    }
+    
     
     
     

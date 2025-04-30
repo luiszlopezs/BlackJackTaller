@@ -9,5 +9,5 @@ package edu.progavud.taller2pa.control;
  * @author sangr
  */
 public class ControlPrincipal {
-    
+   
 }
