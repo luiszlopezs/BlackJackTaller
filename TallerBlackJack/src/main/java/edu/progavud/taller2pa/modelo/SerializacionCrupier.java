@@ -27,7 +27,7 @@ public class SerializacionCrupier {
 
     //Metodo Cosntructor que prepara los canales para leer / escribir 
     //en el archivo de serializacion
-    public SerializacionCrupier() {
+    public SerializacionCrupier(FileOutputStream fileOut,ObjectOutputStream salida, FileInputStream fileIn, ObjectInputStream entrada) {
         try {
             //Para escribir
             fileOut = new FileOutputStream("crupier.bin");
