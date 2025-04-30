@@ -12,9 +12,11 @@ import edu.progavud.taller2pa.modelo.Crupier;
  */
 public class ControlCrupier {
     private Crupier crupier;
+    private ControlPrincipal cPrinc;
 
-    public ControlCrupier(Crupier crupier) {
+    public ControlCrupier(Crupier crupier,ControlPrincipal cPrinc) {
         this.crupier = crupier;
+        this.cPrinc = cPrinc;
     }
     
     public Crupier getCrupier(){
