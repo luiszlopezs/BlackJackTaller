@@ -56,9 +56,9 @@ public class SerializacionCrupier {
         }
     
 
-    public void escribirArchivoSerializado(Persona persona) throws IOException {
+    public void escribirArchivoSerializado(Crupier crupier) throws IOException {
    
-        salida.writeObject(persona);
+        salida.writeObject(crupier);
     
         
     }
