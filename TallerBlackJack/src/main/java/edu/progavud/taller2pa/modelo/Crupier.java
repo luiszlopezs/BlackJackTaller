@@ -13,10 +13,18 @@ import java.util.List;
  *
  * @author hailen
  */
-public class Crupier extends Persona implements Serializable {
+public class Crupier implements Serializable {
+    
+    private String nombre;
+    private String apellido;
+    private int cedula;
+    transient private List<Mano> mano;
 
-    public Crupier(String nombre, String apellido, int cedula, List<Mano> mano) {
-        super(nombre, apellido, cedula, mano);
+
+    public Crupier(String nombre, String apellido, int cedula) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
     }
 
     public Crupier() {
@@ -39,6 +47,38 @@ public class Crupier extends Persona implements Serializable {
         while (mano.getValorMano() <= 16) { // con este getvalormano, tiene que crearse un metodo en control mano que maneje los valores de las cartas en especial de los aces, mirar capturas
             mano.agregarCarta(mazo.sacarCarta());
         }
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    public List<Mano> getMano() {
+        return mano;
+    }
+
+    public void setMano(List<Mano> mano) {
+        this.mano = mano;
     }
     
     

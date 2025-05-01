@@ -10,8 +10,14 @@ import java.util.List;
  *
  * @author hailen
  */
-public class Jugador extends Persona {
+public class Jugador {
     
+    private String nombre;
+    private String apellido;
+    private int cedula;
+    private List<Mano> mano;
+
+    private int telefono;
     private int dinero;
     private String direccion;
     private int valorFichas;
@@ -19,14 +25,16 @@ public class Jugador extends Persona {
     private boolean isAsegurado;
     private boolean isPlantado;
 
-    public Jugador(int dinero, String direccion, int valorFichas, int valorApuesta, boolean isPlantado, boolean isAsegurado, String nombre, String apellido, int cedula, List<Mano> mano) {
-        super(nombre, apellido, cedula, mano);
+    public Jugador(String nombre, String apellido, int cedula, int dinero, int telefono, String direccion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
         this.dinero = dinero;
         this.direccion = direccion;
-        this.valorFichas = valorFichas;
-        this.valorApuesta = valorApuesta;
-        
+        this.telefono = telefono;
     }
+
+    
     
     public Jugador() {
     }
@@ -90,6 +98,47 @@ public class Jugador extends Persona {
     public void setIsAsegurado(boolean isAsegurado) {
         this.isAsegurado = isAsegurado;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    public List<Mano> getMano() {
+        return mano;
+    }
+
+    public void setMano(List<Mano> mano) {
+        this.mano = mano;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+    
     
     
 
