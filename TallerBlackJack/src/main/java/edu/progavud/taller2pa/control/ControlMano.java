@@ -12,7 +12,6 @@ public class ControlMano {
     private ControlPrincipal cPrinc;
 
     public ControlMano(ControlPrincipal cPrinc) {
-        
         this.cPrinc = cPrinc;
     }
     
@@ -25,11 +24,11 @@ public class ControlMano {
         int cantidadAses = 0;
 
         for (Carta carta : mano.getCartas()) {
-            if (carta.getNumero() == 1) {//es un As
+            int valorCarta = cPrinc.getcCarta().getValor(carta);
+            valor += valorCarta;
+            
+            if(carta.getNumero() == 1){
                 cantidadAses++;
-                valor += 11;
-            } else {
-                valor += cPrinc.getcCarta().getValor(); // Si no es un as, se calcula el valor de la carta a través del método delcontrolCarta
             }
 
         }
@@ -41,15 +40,31 @@ public class ControlMano {
         return valor;
     }
     
-    public boolean esBlackjack(){
-        return mano.getCartas().size()== 2 && calcularValorMano(this.mano) == 21; //Si hay 2 cartas en la mano, y el valor de esta es 21, eso significa que hay blackjack
+    public boolean esBlackjack(Mano mano){
+        return mano.getCartas().size()== 2 && calcularValorMano(mano) == 21; //Si hay 2 cartas en la mano, y el valor de esta es 21, eso significa que hay blackjack
     }
     
-    public boolean esPasado(){
-        return calcularValorMano(this.mano) > 21; // 
+    public boolean esPasado(Mano mano){
+        return calcularValorMano(mano) > 21; 
+    }
+    
+    public boolean puedeDividir(Mano mano){
+        if(mano.getCartas().size() != 2){ //Si el jugador recibe dos cartas del mismo valor, puede dividir
+            return false;
+        }
+        Carta c1 = mano.getCartas().get(0);
+        Carta c2 = mano.getCartas().get(1);
+        
+        return cPrinc.getcCarta().getValor(c1) == cPrinc.getcCarta().getValor(c2);
     }
     
     public void limpiar(){
         mano.getCartas().clear();
     }
+
+   
+    
+    
+    
 }
+

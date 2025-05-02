@@ -17,7 +17,7 @@ public class Mazo {
     private ArrayList<Carta> cartas;
     private ControlPrincipal cPrinc;
 
-    public Mazo(ArrayList<Carta> cartas, ControlPrincipal cPrinc) {
+    public Mazo(ControlPrincipal cPrinc) {
         this.cartas = new ArrayList<>();
         this.cPrinc = cPrinc;
         

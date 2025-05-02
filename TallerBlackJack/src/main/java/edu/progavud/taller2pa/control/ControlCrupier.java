@@ -5,7 +5,6 @@
 package edu.progavud.taller2pa.control;
 
 import edu.progavud.taller2pa.modelo.Crupier;
-
 /**
  *
  * @author sangr
@@ -14,9 +13,9 @@ public class ControlCrupier {
     private Crupier crupier;
     private ControlPrincipal cPrinc;
 
-    public ControlCrupier(Crupier crupier,ControlPrincipal cPrinc) {
-        this.crupier = crupier;
+    public ControlCrupier(ControlPrincipal cPrinc) {
         this.cPrinc = cPrinc;
+        this.crupier = new Crupier(); //crear crupier
     }
     
     public boolean debePedirCarta(){
@@ -25,6 +24,11 @@ public class ControlCrupier {
         }else {
             return false;
         }
+    }
+    
+    
+    public void pedirCarta(){
+        crupier.getMano().get(0).agregarCarta(cPrinc.getMazo().sacarCarta());  //Se añade una carta a la mano
     }
     
     public Crupier getCrupier(){

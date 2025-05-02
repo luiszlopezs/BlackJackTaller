@@ -14,14 +14,13 @@ public class ControlCarta {
     private Carta carta;
     private ControlPrincipal cPrinc;
 
-    public ControlCarta(Carta carta,ControlPrincipal cPrinc) {
-        this.carta = carta;
+    public ControlCarta(ControlPrincipal cPrinc) {
         this.cPrinc = cPrinc;
     }
     
-    public int getValor() {
+    public int getValor(Carta carta) {
         if (carta.getNumero() == 1) {
-            return 1; // El As vale 1 por defecto, la lógica para 11 está en Mano
+            return 11; // El As vale 1 por defecto, la lógica para 11 está en Mano
         } else if (carta.getNumero()>= 11 && carta.getNumero() <= 13) {
             return 10; // J, Q, K valen 10
         } else {
@@ -31,3 +30,4 @@ public class ControlCarta {
     
     
 }
+
