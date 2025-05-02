@@ -106,7 +106,7 @@ mostrarTurnoJugador();
         lblCrupier.setText("Crupier");
         getContentPane().add(lblCrupier, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 138, -1));
 
-        panelJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        panelJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), null));
 
         lblCarta1Jugador2.setText("jLabel2");
         lblCarta1Jugador2.setPreferredSize(new java.awt.Dimension(60, 90));
@@ -153,7 +153,7 @@ mostrarTurnoJugador();
 
         getContentPane().add(panelJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, 340, -1));
 
-        panelJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        panelJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), null));
         panelJugador1.setPreferredSize(new java.awt.Dimension(328, 94));
 
         lblCarta1Jugador1.setText("jLabel4");
@@ -228,7 +228,7 @@ mostrarTurnoJugador();
 
         lblImagenCrupier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Crupier.png"))); // NOI18N
         lblImagenCrupier.setText("jLabel2");
-        lblImagenCrupier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        lblImagenCrupier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), null));
         lblImagenCrupier.setPreferredSize(new java.awt.Dimension(104, 104));
         getContentPane().add(lblImagenCrupier, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, -1, -1));
 
