@@ -4,11 +4,7 @@
  */
 package edu.progavud.taller2pa.control;
 
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import edu.progavud.taller2pa.modelo.*;
 
 /**
@@ -21,7 +17,6 @@ public class ControlPrincipal {
     private ControlCrupier cCrupier;
     private ControlMano cMano;
     private Mazo mazo;
-    private ControlCarta cCarta;
     private GestorSerializacion gSerializacion;
     private int turnoActual;
     // Eliminamos el mapa redundante ya que Jugador y Crupier ya tienen una List<Mano>
@@ -29,7 +24,6 @@ public class ControlPrincipal {
 
     public ControlPrincipal() {
         mazo = new Mazo(this);
-        cCarta = new ControlCarta(this);
         cCrupier = new ControlCrupier(this);
         cJugador = new ControlJugador(this);
         cMano = new ControlMano(this);
@@ -93,8 +87,8 @@ public class ControlPrincipal {
     }
     
     private void verificarBlackjackInicial() {
-        boolean crupierPuedeBlackjack = cCarta.getValor(cCrupier.getCrupier().getMano().get(0).getCartas().get(0)) >= 10 
-                                       || cCarta.getValor(cCrupier.getCrupier().getMano().get(0).getCartas().get(0)) == 1;
+        boolean crupierPuedeBlackjack = mazo.getValor(cCrupier.getCrupier().getMano().get(0).getCartas().get(0)) >= 10 
+                                       || mazo.getValor(cCrupier.getCrupier().getMano().get(0).getCartas().get(0)) == 1;
         
         // Si el crupier muestra una carta que puede dar Blackjack (10, J, Q, K o A)
         if (crupierPuedeBlackjack) {
@@ -303,10 +297,6 @@ public class ControlPrincipal {
         return null;
     }
     
-    public ControlCarta getcCarta() {
-        return cCarta;
-    }
-
     public ControlCrupier getcCrupier() {
         return cCrupier;
     }

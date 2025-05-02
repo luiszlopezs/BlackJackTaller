@@ -9,5 +9,14 @@ package edu.progavud.taller2pa.control;
  * @author sangr
  */
 public class ControlVentana {
+    private ControlPrincipal cPrinc;
+    private BienvenidaView vistaBienvenida;
+    private SeleccionJugadoresView vistaJugadores;
+    private ApuestaView vistaApuestas;
+    private ResultadosView vistaResultados;
+    
+    public ControlVentana(ControlPrincipal cPrinc){
+        
+    }
     
 }

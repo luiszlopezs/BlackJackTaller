@@ -24,7 +24,7 @@ public class ControlMano {
         int cantidadAses = 0;
 
         for (Carta carta : mano.getCartas()) {
-            int valorCarta = cPrinc.getcCarta().getValor(carta);
+            int valorCarta = cPrinc.getMazo().getValor(carta);
             valor += valorCarta;
             
             if(carta.getNumero() == 1){
@@ -55,7 +55,7 @@ public class ControlMano {
         Carta c1 = mano.getCartas().get(0);
         Carta c2 = mano.getCartas().get(1);
         
-        return cPrinc.getcCarta().getValor(c1) == cPrinc.getcCarta().getValor(c2);
+        return cPrinc.getMazo().getValor(c1) == cPrinc.getMazo().getValor(c2);
     }
     
     public void limpiar(){

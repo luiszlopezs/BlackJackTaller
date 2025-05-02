@@ -5,8 +5,6 @@
 package edu.progavud.taller2pa.modelo;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
