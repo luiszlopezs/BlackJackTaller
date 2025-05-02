@@ -8,6 +8,11 @@ package edu.progavud.taller2pa.vista;
  *
  * @author jjuan
  */
+
+import javax.swing.ImageIcon;
+import java.awt.Image;
+import javax.swing.JLabel;
+
 public class ResultadosView extends javax.swing.JFrame {
 
     /**
@@ -15,6 +20,13 @@ public class ResultadosView extends javax.swing.JFrame {
      */
     public ResultadosView() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(139, 0, 0));
+        ponerIcono(lblTrofeo, "/img/Trofeo.png");
+
+    }
+    
+    public void setResultadoTexto(String texto) {
+        lblResultado.setText(texto);
     }
 
     /**
@@ -26,21 +38,94 @@ public class ResultadosView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblResultado = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JButton();
+        lblGanador = new javax.swing.JLabel();
+        lblPuntaje = new javax.swing.JLabel();
+        lblTrofeo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Resultado de la partida");
+        setBackground(new java.awt.Color(139, 0, 0));
+
+        lblResultado.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 215, 0));
+        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado.setText("Resultado de la partida");
+
+        btnCerrar.setBackground(new java.awt.Color(255, 215, 0));
+        btnCerrar.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+
+        lblGanador.setFont(new java.awt.Font("Serif", 1, 20)); // NOI18N
+        lblGanador.setForeground(new java.awt.Color(255, 215, 0));
+        lblGanador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblGanador.setText("Gano el Jugador ...");
+
+        lblPuntaje.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lblPuntaje.setText("\"Puntaje final: Jugador 1 - 21, Jugador 2 - 18\"");
+
+        lblTrofeo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Trofeo.png"))); // NOI18N
+        lblTrofeo.setText("jLabel1");
+        lblTrofeo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(198, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblResultado)
+                        .addGap(175, 175, 175))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCerrar)
+                        .addGap(257, 257, 257))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblPuntaje)
+                        .addGap(122, 122, 122))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTrofeo, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblGanador))
+                        .addGap(215, 215, 215))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(lblResultado)
+                .addGap(59, 59, 59)
+                .addComponent(lblTrofeo, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(lblGanador)
+                .addGap(34, 34, 34)
+                .addComponent(lblPuntaje)
+                .addGap(38, 38, 38)
+                .addComponent(btnCerrar)
+                .addGap(42, 42, 42))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void ponerIcono(JLabel label, String rutaImagen) {
+    ImageIcon icono = new ImageIcon(getClass().getResource(rutaImagen));
+    Image imagenEscalada = icono.getImage().getScaledInstance(
+        label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
+    label.setIcon(new ImageIcon(imagenEscalada));
+}
 
     /**
      * @param args the command line arguments
@@ -78,5 +163,10 @@ public class ResultadosView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JLabel lblGanador;
+    private javax.swing.JLabel lblPuntaje;
+    private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblTrofeo;
     // End of variables declaration//GEN-END:variables
 }
