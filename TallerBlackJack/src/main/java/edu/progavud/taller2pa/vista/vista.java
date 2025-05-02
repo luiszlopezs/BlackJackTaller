@@ -8,6 +8,6 @@ package edu.progavud.taller2pa.vista;
  *
  * @author hailen
  */
-public class Control {
+public class vista {
     
 }

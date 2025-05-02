@@ -10,4 +10,13 @@
         <maven.compiler.release>23</maven.compiler.release>
         <exec.mainClass>com.mycompany.tallerblackjack.TallerBlackJack</exec.mainClass>
     </properties>
+    <dependencies>
+<dependency>
+    <groupId>org.netbeans.lib</groupId>
+    <artifactId>absolutelayout</artifactId>
+    <version>1.0</version>
+</dependency>
+
+</dependencies>
+
 </project>
