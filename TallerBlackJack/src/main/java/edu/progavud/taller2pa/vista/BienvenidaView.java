@@ -6,8 +6,6 @@ package edu.progavud.taller2pa.vista;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class BienvenidaView extends JFrame {
 
@@ -20,29 +18,26 @@ public class BienvenidaView extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
-        
+        // Fondo personalizado con imagen
         ImagenFondoPanel panelFondo = new ImagenFondoPanel("/img/cartasFondo.png");
-        panelFondo.setLayout(new BorderLayout());
+        panelFondo.setLayout(null); // Posicionamiento absoluto
         setContentPane(panelFondo);
 
-        
-        lblTitulo = new JLabel("¡Bienvenido a BlackJack 21!", JLabel.CENTER);
-        lblTitulo.setFont(new Font("Arial", Font.BOLD, 32));
+        // Título con fondo negro y letras blancas
+        lblTitulo = new JLabel("¡BIENVENIDO A BLACKJACK 21!", SwingConstants.CENTER);
+        lblTitulo.setFont(new Font("Arial", Font.BOLD, 28));
         lblTitulo.setForeground(Color.WHITE);
-        panelFondo.add(lblTitulo, BorderLayout.NORTH);
+        lblTitulo.setBackground(Color.BLACK);
+        lblTitulo.setOpaque(true);
+        lblTitulo.setBounds(120, 100, 560, 50);
+        panelFondo.add(lblTitulo);
 
-        
-        JPanel panelBoton = new JPanel();
-        panelBoton.setOpaque(false); 
+        // Botón dorado centrado
         btnIniciarJuego = new JButton("Iniciar Juego");
-        btnIniciarJuego.setFont(new Font("Arial", Font.BOLD, 24));
-        btnIniciarJuego.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "¡Vamos a jugar!");
-            }
-        });
-
-        panelBoton.add(btnIniciarJuego);
-        panelFondo.add(panelBoton, BorderLayout.CENTER);
+        btnIniciarJuego.setFont(new Font("SansSerif", Font.BOLD, 18));
+        btnIniciarJuego.setBackground(new Color(255, 204, 0)); // Dorado
+        btnIniciarJuego.setFocusPainted(false);
+        btnIniciarJuego.setBounds(300, 300, 200, 45);
+        panelFondo.add(btnIniciarJuego);
     }
 }
