@@ -9,118 +9,77 @@ import java.awt.*;
 
 public class ApuestaView extends JFrame {
 
-    private JButton btnFichaVerde1, btnFichaAzul1, btnFichaRoja1;
-    private JButton btnFichaVerde2, btnFichaAzul2, btnFichaRoja2;
-    private JButton btnListo1, btnListo2;
-    private JLabel lblFichas1, lblFichas2;
-    private JLabel lblDinero1, lblDinero2;
-
     public ApuestaView() {
         setTitle("Apuesta de Jugadores");
-        setSize(700, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 700);
         setLocationRelativeTo(null);
-        setLayout(new GridLayout(1, 2));
+        setLayout(new GridLayout(1, 2)); // Jugador 1 a la izquierda, Jugador 2 a la derecha
 
-        // Paneles
-        add(crearPanelJugador("Jugador 1", true, new Color(204, 255, 204)));
-        add(crearPanelJugador("Jugador 2", false, new Color(204, 229, 255)));
+        // Panel Jugador 1
+        JPanel panelJugador1 = crearPanelJugador("Jugador 1");
+        panelJugador1.setBackground(new Color(200, 255, 200)); // verde claro
+        add(panelJugador1);
+
+        // Panel Jugador 2
+        JPanel panelJugador2 = crearPanelJugador("Jugador 2");
+        panelJugador2.setBackground(new Color(200, 230, 255)); // azul claro
+        add(panelJugador2);
+
+        setVisible(true);
     }
 
-    private JPanel crearPanelJugador(String nombre, boolean esJugador1, Color fondo) {
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(fondo);
+    private JPanel crearPanelJugador(String nombreJugador) {
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setOpaque(true);
 
-        // Nombre
-        JLabel lblNombre = new JLabel(nombre, SwingConstants.CENTER);
-        lblNombre.setFont(new Font("Arial", Font.BOLD, 16));
-        panel.add(lblNombre, BorderLayout.NORTH);
+        JLabel lblNombre = new JLabel(nombreJugador, SwingConstants.CENTER);
+        lblNombre.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lblNombre.setFont(new Font("Arial", Font.BOLD, 18));
 
-        // Centro con botones de fichas
-        JPanel panelFichas = new JPanel(new GridLayout(3, 1, 5, 5));
-        panelFichas.setOpaque(false);
-        panelFichas.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 50));
+        JButton btnFicha10 = crearBotonFicha("/img/ficha1.png");
+        JButton btnFicha50 = crearBotonFicha("/img/ficha2.png");
+        JButton btnFicha100 = crearBotonFicha("/img/ficha3.png");
 
-        // Crear botones con imágenes redimensionadas
-        btnFichaVerde1 = crearBotonFicha("/img/ficha1.png");
-        btnFichaAzul1 = crearBotonFicha("/img/ficha2.png");
-        btnFichaRoja1 = crearBotonFicha("/img/ficha3.png");
+        JLabel lblFichas = new JLabel("Fichas: 0");
+        JLabel lblDinero = new JLabel("Dinero: 1000");
+        lblFichas.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lblDinero.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        if (esJugador1) {
-            panelFichas.add(btnFichaVerde1);
-            panelFichas.add(btnFichaAzul1);
-            panelFichas.add(btnFichaRoja1);
-        } else {
-            btnFichaVerde2 = crearBotonFicha("/img/ficha1.png");
-            btnFichaAzul2 = crearBotonFicha("/img/ficha2.png");
-            btnFichaRoja2 = crearBotonFicha("/img/ficha3.png");
-            panelFichas.add(btnFichaVerde2);
-            panelFichas.add(btnFichaAzul2);
-            panelFichas.add(btnFichaRoja2);
-        }
-
-        panel.add(panelFichas, BorderLayout.CENTER);
-
-        // Información y botón "Listo"
-        JPanel panelInferior = new JPanel(new GridLayout(3, 1));
-        panelInferior.setOpaque(false);
-
-        JLabel lblFichas = new JLabel("Fichas: 0", SwingConstants.CENTER);
-        JLabel lblDinero = new JLabel("Dinero: 1000", SwingConstants.CENTER);
         JButton btnListo = new JButton("Listo");
+        btnListo.setBackground(new Color(255, 204, 0)); // dorado
+        btnListo.setForeground(Color.BLACK);
+        btnListo.setFont(new Font("Arial", Font.BOLD, 14));
+        btnListo.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        if (esJugador1) {
-            lblFichas1 = lblFichas;
-            lblDinero1 = lblDinero;
-            btnListo1 = btnListo;
-        } else {
-            lblFichas2 = lblFichas;
-            lblDinero2 = lblDinero;
-            btnListo2 = btnListo;
-        }
-
-        panelInferior.add(lblFichas);
-        panelInferior.add(lblDinero);
-        panelInferior.add(btnListo);
-
-        panel.add(panelInferior, BorderLayout.SOUTH);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(lblNombre);
+        panel.add(Box.createVerticalStrut(30));
+        panel.add(btnFicha10);
+        panel.add(Box.createVerticalStrut(20));
+        panel.add(btnFicha50);
+        panel.add(Box.createVerticalStrut(20));
+        panel.add(btnFicha100);
+        panel.add(Box.createVerticalStrut(30));
+        panel.add(lblFichas);
+        panel.add(lblDinero);
+        panel.add(Box.createVerticalStrut(30));
+        panel.add(btnListo);
 
         return panel;
     }
 
-    private JButton crearBotonFicha(String ruta) {
-        ImageIcon icon = new ImageIcon(getClass().getResource(ruta));
-        Image img = icon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
-        JButton boton = new JButton(new ImageIcon(img));
+    private JButton crearBotonFicha(String rutaImagen) {
+        JButton boton = new JButton();
+        ImageIcon icono = new ImageIcon(getClass().getResource(rutaImagen));
+        Image imagen = icono.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH); // tamaño ajustable
+        boton.setIcon(new ImageIcon(imagen));
         boton.setContentAreaFilled(false);
         boton.setBorderPainted(false);
         boton.setFocusPainted(false);
+        boton.setPreferredSize(new Dimension(80, 80));
+        boton.setAlignmentX(Component.CENTER_ALIGNMENT);
         return boton;
-    }
-
-    // Métodos getters para el controlador
-    public JButton getBtnFichaVerde1() { return btnFichaVerde1; }
-    public JButton getBtnFichaAzul1() { return btnFichaAzul1; }
-    public JButton getBtnFichaRoja1() { return btnFichaRoja1; }
-    public JButton getBtnFichaVerde2() { return btnFichaVerde2; }
-    public JButton getBtnFichaAzul2() { return btnFichaAzul2; }
-    public JButton getBtnFichaRoja2() { return btnFichaRoja2; }
-    public JButton getBtnListo1() { return btnListo1; }
-    public JButton getBtnListo2() { return btnListo2; }
-
-    public void setFichas1(int fichas) {
-        lblFichas1.setText("Fichas: " + fichas);
-    }
-
-    public void setDinero1(int dinero) {
-        lblDinero1.setText("Dinero: " + dinero);
-    }
-
-    public void setFichas2(int fichas) {
-        lblFichas2.setText("Fichas: " + fichas);
-    }
-
-    public void setDinero2(int dinero) {
-        lblDinero2.setText("Dinero: " + dinero);
     }
 }
