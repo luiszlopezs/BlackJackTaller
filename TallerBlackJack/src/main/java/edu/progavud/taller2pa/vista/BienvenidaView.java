@@ -18,12 +18,12 @@ public class BienvenidaView extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
-        // Fondo personalizado con imagen
+        
         ImagenFondoPanel panelFondo = new ImagenFondoPanel("/img/cartasFondo.png");
         panelFondo.setLayout(null); // Posicionamiento absoluto
         setContentPane(panelFondo);
 
-        // Título con fondo negro y letras blancas
+        
         lblTitulo = new JLabel("¡BIENVENIDO A BLACKJACK 21!", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 28));
         lblTitulo.setForeground(Color.WHITE);
@@ -32,7 +32,7 @@ public class BienvenidaView extends JFrame {
         lblTitulo.setBounds(120, 100, 560, 50);
         panelFondo.add(lblTitulo);
 
-        // Botón dorado centrado
+        
         btnIniciarJuego = new JButton("Iniciar Juego");
         btnIniciarJuego.setFont(new Font("SansSerif", Font.BOLD, 18));
         btnIniciarJuego.setBackground(new Color(255, 204, 0)); // Dorado

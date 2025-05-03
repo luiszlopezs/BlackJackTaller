@@ -6,8 +6,6 @@ package edu.progavud.taller2pa.vista;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class SeleccionJugadoresView extends JFrame {
 
@@ -29,6 +27,19 @@ public class SeleccionJugadoresView extends JFrame {
 
         // Estilo de botón dorado
         Color dorado = new Color(255, 215, 0);
+
+        // Crupier y mazo en la parte superior
+        ImageIcon iconoCrupier = new ImageIcon(getClass().getResource("/img/Crupier.png"));
+        JLabel lblImagenCrupier = new JLabel();
+        lblImagenCrupier.setIcon(new ImageIcon(iconoCrupier.getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH)));
+        lblImagenCrupier.setBounds(450, 10, 100, 120);
+        panelPrincipal.add(lblImagenCrupier);
+
+        ImageIcon iconoMazo = new ImageIcon(getClass().getResource("/img/mazo.png"));
+        JLabel lblImagenMazo = new JLabel();
+        lblImagenMazo.setIcon(new ImageIcon(iconoMazo.getImage().getScaledInstance(60, 90, Image.SCALE_SMOOTH)));
+        lblImagenMazo.setBounds(560, 20, 60, 90);
+        panelPrincipal.add(lblImagenMazo);
 
         // Cartas Jugador 1
         for (int i = 0; i < cartasJugador1.length; i++) {
@@ -95,7 +106,7 @@ public class SeleccionJugadoresView extends JFrame {
         btnPlantarse2 = new JButton("Plantarse");
         configurarBoton(btnPedir2, dorado, 800, 640);
         configurarBoton(btnDoblar2, dorado, 930, 640);
-        configurarBoton(btnPlantarse2, dorado, 1080, 640); // puede quedar fuera si la ventana es muy pequeña
+        configurarBoton(btnPlantarse2, dorado, 1080, 640);
         panelPrincipal.add(btnPedir2);
         panelPrincipal.add(btnDoblar2);
         panelPrincipal.add(btnPlantarse2);
