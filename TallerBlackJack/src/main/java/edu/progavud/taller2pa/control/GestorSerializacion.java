@@ -21,7 +21,7 @@ public class GestorSerializacion {
         
         this.cPrinc = cPrinc;
 
-        serializar = new SerializacionCrupier();
+        //serializar = new SerializacionCrupier();
     }
 
     public void Serializar(Crupier crupier) {
