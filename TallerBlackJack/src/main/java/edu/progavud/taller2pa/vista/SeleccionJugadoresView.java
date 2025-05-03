@@ -8,102 +8,118 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SeleccionJugadoresView extends JFrame {
-    private JLabel fondoMesa;
-    private JLabel lblImagenCrupier;
-    private JLabel[] cartasJugador1;
-    private JLabel[] cartasJugador2;
-    private JLabel lblNombreJugador1, lblFichasJugador1, lblDineroJugador1;
-    private JLabel lblNombreJugador2, lblFichasJugador2, lblDineroJugador2;
+
+    private JLabel lblCrupier;
+    private JLabel[] lblCartasJugador1;
+    private JLabel[] lblCartasJugador2;
+    private JLabel lblFichasJugador1;
+    private JLabel lblDineroJugador1;
+    private JLabel lblFichasJugador2;
+    private JLabel lblDineroJugador2;
+    private JLabel lblNombreJugador1;
+    private JLabel lblNombreJugador2;
+    private JPanel panelCartasJugador1;
+    private JPanel panelCartasJugador2;
+    private JPanel panelBotonesJugador1;
+    private JPanel panelBotonesJugador2;
 
     public SeleccionJugadoresView() {
         setTitle("Mesa de Blackjack");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(1000, 700);
+        setSize(800, 600);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        fondoMesa = new JLabel();
-        fondoMesa.setLayout(new BorderLayout());
-        setContentPane(fondoMesa);
-        fondoMesa.setIcon(escalarImagen("/img/mesaBlacjack.png", 1000, 700));
+        // Capa principal con fondo
+        JLabel fondo = new JLabel();
+        fondo.setLayout(new BorderLayout());
+        fondo.setIcon(escalarImagen("/img/mesaBlacjack.png", 800, 600));
+        setContentPane(fondo);
 
-        JPanel panelCentro = new JPanel(new BorderLayout());
-        panelCentro.setOpaque(false);
-        fondoMesa.add(panelCentro, BorderLayout.CENTER);
+        // Panel central con contenido
+        JPanel panelCentral = new JPanel();
+        panelCentral.setOpaque(false);
+        panelCentral.setLayout(new BorderLayout());
+        fondo.add(panelCentral, BorderLayout.CENTER);
 
-        // Imagen Crupier
-        lblImagenCrupier = new JLabel(escalarImagen("/img/Crupier.png", 120, 120));
-        lblImagenCrupier.setHorizontalAlignment(SwingConstants.CENTER);
-        panelCentro.add(lblImagenCrupier, BorderLayout.NORTH);
+        // Crupier
+        lblCrupier = new JLabel();
+        lblCrupier.setHorizontalAlignment(SwingConstants.CENTER);
+        lblCrupier.setIcon(escalarImagen("/img/Crupier.png", 100, 100));
+        panelCentral.add(lblCrupier, BorderLayout.NORTH);
 
-        // Panel Jugadores
-        JPanel panelJugadores = new JPanel(new GridLayout(1, 2));
+        // Panel cartas y jugadores
+        JPanel panelJugadores = new JPanel(new GridLayout(2, 1));
         panelJugadores.setOpaque(false);
-        panelCentro.add(panelJugadores, BorderLayout.CENTER);
+        panelCentral.add(panelJugadores, BorderLayout.CENTER);
 
-        panelJugadores.add(crearPanelJugador("Jugador 1", true));
-        panelJugadores.add(crearPanelJugador("Jugador 2", false));
-    }
+        // Jugador 1
+        JPanel panelJugador1 = new JPanel(new BorderLayout());
+        panelJugador1.setOpaque(false);
+        panelJugadores.add(panelJugador1);
 
-    private JPanel crearPanelJugador(String nombre, boolean esJugador1) {
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.setOpaque(false);
-
-        // Etiquetas nombre, fichas, dinero
-        JLabel lblNombre = new JLabel(nombre, SwingConstants.CENTER);
-        JLabel lblFichas = new JLabel("Fichas: 0", SwingConstants.CENTER);
-        JLabel lblDinero = new JLabel("Dinero: 1000", SwingConstants.CENTER);
-
-        JPanel panelDatos = new JPanel(new GridLayout(3, 1));
-        panelDatos.setOpaque(false);
-        panelDatos.add(lblNombre);
-        panelDatos.add(lblFichas);
-        panelDatos.add(lblDinero);
-
-        panel.add(panelDatos, BorderLayout.NORTH);
-
-        // Cartas
-        JLabel[] cartas = new JLabel[5];
-        JPanel panelCartas = new JPanel(new FlowLayout());
-        panelCartas.setOpaque(false);
+        panelCartasJugador1 = new JPanel(new GridLayout(1, 5));
+        panelCartasJugador1.setOpaque(false);
+        lblCartasJugador1 = new JLabel[5];
         for (int i = 0; i < 5; i++) {
-            cartas[i] = new JLabel();
-            cartas[i].setPreferredSize(new Dimension(60, 90));
-            panelCartas.add(cartas[i]);
+            lblCartasJugador1[i] = new JLabel();
+            lblCartasJugador1[i].setHorizontalAlignment(SwingConstants.CENTER);
+            panelCartasJugador1.add(lblCartasJugador1[i]);
         }
+        panelJugador1.add(panelCartasJugador1, BorderLayout.NORTH);
 
-        panel.add(panelCartas, BorderLayout.CENTER);
+        JPanel panelInfo1 = new JPanel();
+        panelInfo1.setOpaque(false);
+        lblNombreJugador1 = new JLabel("Jugador 1");
+        lblFichasJugador1 = new JLabel("Fichas: 0");
+        lblDineroJugador1 = new JLabel("Dinero: 1000");
+        panelInfo1.add(lblNombreJugador1);
+        panelInfo1.add(lblFichasJugador1);
+        panelInfo1.add(lblDineroJugador1);
+        panelJugador1.add(panelInfo1, BorderLayout.CENTER);
 
-        if (esJugador1) {
-            lblNombreJugador1 = lblNombre;
-            lblFichasJugador1 = lblFichas;
-            lblDineroJugador1 = lblDinero;
-            cartasJugador1 = cartas;
-        } else {
-            lblNombreJugador2 = lblNombre;
-            lblFichasJugador2 = lblFichas;
-            lblDineroJugador2 = lblDinero;
-            cartasJugador2 = cartas;
+        panelBotonesJugador1 = new JPanel();
+        panelBotonesJugador1.setOpaque(false);
+        panelBotonesJugador1.add(new JButton("Pedir carta"));
+        panelBotonesJugador1.add(new JButton("Doblar apuesta"));
+        panelBotonesJugador1.add(new JButton("Plantarse"));
+        panelJugador1.add(panelBotonesJugador1, BorderLayout.SOUTH);
+
+        // Jugador 2
+        JPanel panelJugador2 = new JPanel(new BorderLayout());
+        panelJugador2.setOpaque(false);
+        panelJugadores.add(panelJugador2);
+
+        panelCartasJugador2 = new JPanel(new GridLayout(1, 5));
+        panelCartasJugador2.setOpaque(false);
+        lblCartasJugador2 = new JLabel[5];
+        for (int i = 0; i < 5; i++) {
+            lblCartasJugador2[i] = new JLabel();
+            lblCartasJugador2[i].setHorizontalAlignment(SwingConstants.CENTER);
+            panelCartasJugador2.add(lblCartasJugador2[i]);
         }
+        panelJugador2.add(panelCartasJugador2, BorderLayout.NORTH);
 
-        // Botones
-        JPanel panelBotones = new JPanel();
-        panelBotones.setOpaque(false);
-        panelBotones.add(new JButton("Pedir carta"));
-        panelBotones.add(new JButton("Doblar apuesta"));
-        panelBotones.add(new JButton("Plantarse"));
+        JPanel panelInfo2 = new JPanel();
+        panelInfo2.setOpaque(false);
+        lblNombreJugador2 = new JLabel("Jugador 2");
+        lblFichasJugador2 = new JLabel("Fichas: 0");
+        lblDineroJugador2 = new JLabel("Dinero: 1000");
+        panelInfo2.add(lblNombreJugador2);
+        panelInfo2.add(lblFichasJugador2);
+        panelInfo2.add(lblDineroJugador2);
+        panelJugador2.add(panelInfo2, BorderLayout.CENTER);
 
-        panel.add(panelBotones, BorderLayout.SOUTH);
-
-        return panel;
+        panelBotonesJugador2 = new JPanel();
+        panelBotonesJugador2.setOpaque(false);
+        panelBotonesJugador2.add(new JButton("Pedir carta"));
+        panelBotonesJugador2.add(new JButton("Doblar apuesta"));
+        panelBotonesJugador2.add(new JButton("Plantarse"));
+        panelJugador2.add(panelBotonesJugador2, BorderLayout.SOUTH);
     }
 
     private ImageIcon escalarImagen(String ruta, int ancho, int alto) {
         ImageIcon icono = new ImageIcon(getClass().getResource(ruta));
-        Image img = icono.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
-        return new ImageIcon(img);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new SeleccionJugadoresView().setVisible(true));
+        Image imagen = icono.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
+        return new ImageIcon(imagen);
     }
 }
